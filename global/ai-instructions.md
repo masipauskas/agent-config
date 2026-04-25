@@ -60,7 +60,20 @@ When uncertain about library APIs, use chub to fetch documentation:
 `chub get <library>/api --lang <language>`. Fallback to reading installed
 source code in local environment directories.
 
-## Git
+## Git Hygiene
 
-Conventional commits: type(scope): description
-One logical change per commit. Never force push main.
+Conventional commits: type(scope): description.
+Split logically distinct changes into separate commits. Never force push main.
+
+Never overwrite .gitignore — append entries to preserve existing rules.
+Use `cat >> .gitignore`, not `cat >` or full-file rewrites via Write.
+
+## Spec & Design Review Pattern
+
+When reviewing a feature spec:
+1. Identify gaps as a numbered list with severity.
+2. Ask clarifying questions before editing.
+3. Surface trade-offs explicitly.
+4. Apply edits only after user decisions.
+
+Save specs to `docs/features/<id>-<name>.md`.
